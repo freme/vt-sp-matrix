@@ -3,12 +3,12 @@ Description             ;   VampirTrace ; Score-P
 Supported platforms
 
 IBM BlueGene            ;   yes (L/P)   ; yes (L not tested)
-Cray XT                 ;   yes         ; no (maybe in 1.1)
+Cray XT                 ;   yes         ; no (in 1.2)
 Linux IBM AIX           ;   yes         ;
 IBM SP & BladeCenter    ;   maybe (not tested) ; yes
 SGI                     ;   yes         ; yes
-Sun                     ;   yes         ;
-Mac OS X                ;   yes         ; probably (no one tested it)
+Sun                     ;   yes         ; yes
+Mac OS X                ;   yes         ; partially (OTF2, not fully tested)
 NEC SX series           ;   yes         ; no (last known issue: compiler dies on our code)
 ARM                     ;   no          ; 1.1
 
@@ -45,13 +45,13 @@ Runtime
 MPI                     ;   yes         ; yes
 MPI correctness check   ;   yes         ; no
 MPI wait-time profiling ;               ; yes
-Pthreads                ;   yes         ; no
+Pthreads                ;   yes         ; no (in 1.2)
 Java                    ;   yes         ; no
-NVIDIA CUDA             ;   yes         ; 1.1
+NVIDIA CUDA             ;   yes         ; yes
 OpenCL                  ;   yes         ; no
 3rd party libs          ;   yes         ; no
 External counter        ;   yes         ; no
-Async. counter          ;   yes         ;
+Async. counter          ;   yes         ; (yes)
 
 Operating System
 
@@ -68,14 +68,14 @@ PAPI                    ;   yes         ; yes
 Sun CPC                 ;   yes         ; no
 NEC SX                  ;   yes         ; no
 
-I/O                     ;   yes         ; no (in a branch, but no records in OTF2 yet)
+I/O                     ;   yes         ; no
 CPU ID                  ;   yes         ; no
 
 Management
 
 Filtering               ;   yes         ; yes
-Grouping                ;   yes         ; not needed, will probably be handled directly by vampir
-Rewind                  ;   yes         ; 1.1
+Grouping                ;   yes         ; not needed, maybe handle directly in vampir
+Rewind                  ;   yes         ; yes
 Selective tracing       ;   yes (VT_ON/OFF) ; yes
 
 
@@ -87,4 +87,4 @@ Periscope Online Access ;  no           ; yes
 
 Storage
 
-Aggregated event files  ; yes (IOFSL)   ; yes (SIONLIB)
+Aggregated event files  ; yes (IOFSL)   ; yes (SIONLIB for MPI programms)
